@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Mayank Kantharia | Data Scientist",
   description:
-    "From raw data to actionable intelligence — powered by machine learning and AI.",
+    "From raw data to actionable intelligence - powered by machine learning and AI.",
   icons: {
     icon: "/1.jpeg",
     shortcut: "/1.jpeg",

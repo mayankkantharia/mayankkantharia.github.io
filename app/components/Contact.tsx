@@ -1,13 +1,13 @@
 'use client';
-import { FormEvent } from 'react';
+// import { FormEvent } from 'react';
 
 const Contact = () => {
     
-    const handleSubmit = (e: FormEvent) => {
-        e.preventDefault();
-        // Handle form submission logic here
-        alert("Form submitted! (This is a placeholder)");
-    }
+    // const handleSubmit = (e: FormEvent) => {
+    //     e.preventDefault();
+    //     // Handle form submission logic here
+    //     alert("Form submitted! (This is a placeholder)");
+    // }
 
     return (
         <section id="contact" className="py-14">
@@ -18,14 +18,15 @@ const Contact = () => {
                 </div>
                 
                 <div className="glass-card p-6 md:p-12 rounded-3xl">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div className="grid grid-cols-1 md:grid-cols-1 gap-12">
+                    {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-12"> */}
                         <div className="flex flex-col justify-between h-full space-y-8">
                             <div>
                                 <h3 className="text-2xl font-semibold mb-4 text-white">Let&apos;s Connect</h3>
                                 <p className="text-gray-400 leading-relaxed text-justify">
-                                    Finishing my Master’s in Data Science 🎓 and ready to turn data into impact. 
-                                    Actively seeking opportunities in data science, machine learning, and AI — 
-                                    let’s collaborate and make something amazing!
+                                    Finishing my Master&apos;s in Data Science 🎓 and ready to turn data into impact. 
+                                    Actively seeking opportunities in data science, machine learning, and AI - 
+                                    let&apos;s collaborate and make something amazing!
                                 </p>
                             </div>
 
@@ -62,7 +63,7 @@ const Contact = () => {
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        {/* <div>
                             <form onSubmit={handleSubmit} className="space-y-6">
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div>
@@ -92,7 +93,7 @@ const Contact = () => {
                                     </button>
                                 </div>
                             </form>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

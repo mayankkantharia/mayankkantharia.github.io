@@ -3,12 +3,19 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 const taglines = [
-    "From raw data to actionable intelligence - powered by machine learning and AI.",
-    "Turning complex datasets into smarter decisions and real-world impact 🌍.",
-    "Driving innovation through data science, machine learning, and AI 🚀.",
-    "Unlocking insights that power better strategies and solutions 🔑.",
+  "Building intelligent systems with machine learning, NLP, and cloud engineering.",
+  "Transforming data into scalable, real-world ML solutions.",
+  "Designing end-to-end machine learning pipelines that deliver impact.",
+  "Where data science meets engineering — from analytics to deployment.",
+  "Turning complex datasets into production-ready intelligence.",
+  "Crafting ML-powered applications that solve real problems.",
+  "Bridging data, machine learning, and cloud systems to build smarter solutions.",
+  "Engineering data-driven systems with precision, scalability, and impact.",
+  "From raw data to deployed intelligence — built with ML and cloud technologies.",
+  "Delivering insights and automation through modern machine learning.",
+  "Building robust ML services that scale from prototype to production.",
+  "Applying machine learning and NLP to create meaningful, real-world outcomes."
 ];
-
 const Hero = () => {
     const [currentTagline, setCurrentTagline] = useState(taglines[0]);
 
@@ -31,7 +38,7 @@ const Hero = () => {
                             <span className="gradient-text">Mayank Kantharia</span>
                         </h1>
                         <h2 className="text-xl md:text-2xl text-gray-300">
-                            Data Scientist
+                            Data Scientist & ML Engineer
                         </h2>
                         <p className="text-lg text-gray-400 max-w-lg transition-opacity duration-500 ease-in-out">
                             {currentTagline}
@@ -41,7 +48,7 @@ const Hero = () => {
                                 <span>Get In Touch</span>
                                 <i className="mdi mdi-email-outline"></i>
                             </a>
-                            <a href="/Resume Mayank Kantharia - Australia.pdf" target="_blank" rel="noopener noreferrer" className="px-6 py-3 border border-primary text-primary hover:bg-primary/10 rounded-lg font-medium transition duration-300 flex items-center justify-center space-x-2">
+                            <a href="/Resume Mayank Kantharia.pdf" target="_blank" rel="noopener noreferrer" className="px-6 py-3 border border-primary text-primary hover:bg-primary/10 rounded-lg font-medium transition duration-300 flex items-center justify-center space-x-2">
                                 <span>Download Resume</span>
                                 <i className="mdi mdi-download-outline"></i>
                             </a>

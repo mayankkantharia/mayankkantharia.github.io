@@ -1,64 +1,64 @@
 import Image from 'next/image';
 
 const skillsData = {
-    "Data Science": [
-        { src: "https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white", alt: "Python" },
-        { src: "https://img.shields.io/badge/R-276DC3?logo=r&logoColor=white", alt: "R" },
-        { src: "https://img.shields.io/badge/TensorFlow-FF6F00?logo=tensorflow&logoColor=white", alt: "TensorFlow" },
-        { src: "https://img.shields.io/badge/Scikit--learn-F7931E?logo=scikit-learn&logoColor=white", alt: "Scikit-learn" },
-        { src: "https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white", alt: "PyTorch" },
-        { src: "https://img.shields.io/badge/OpenCV-5C3EE8?logo=opencv&logoColor=white", alt: "OpenCV" },
-        { src: "https://img.shields.io/badge/Keras-D00000?logo=keras&logoColor=white", alt: "Keras" },
-        { src: "https://img.shields.io/badge/Pandas-150458?logo=pandas&logoColor=white", alt: "Pandas" },
-        { src: "https://img.shields.io/badge/NumPy-013243?logo=numpy&logoColor=white", alt: "NumPy" },
-        { src: "https://img.shields.io/badge/Seaborn-30B7F5?logo=seaborn&logoColor=white", alt: "Seaborn" },
-        { src: "https://img.shields.io/badge/Tableau-E97627?logo=tableau&logoColor=white", alt: "Tableau" },
-        { src: "https://img.shields.io/badge/Power_BI-F2C811?logo=powerbi&logoColor=black", alt: "Power BI" },
-    ],
-    "Databases & Storage": [
-        { src: "https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white", alt: "MySQL" },
-        { src: "https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white", alt: "MongoDB" },
-        { src: "https://img.shields.io/badge/SQLite-003B57?logo=sqlite&logoColor=white", alt: "SQLite" },
-        { src: "https://img.shields.io/badge/Firebase-FFCA28?logo=firebase&logoColor=black", alt: "Firebase" },
-        { src: "https://img.shields.io/badge/Hive-D50000?logo=apache-hive&logoColor=white", alt: "Hive" },
-    ],
-    "Cloud & Big Data": [
-        { src: "https://img.shields.io/badge/AWS-232F3E?logo=amazon-aws&logoColor=white", alt: "AWS" },
-        { src: "https://img.shields.io/badge/Hadoop-66CCFF?logo=apache-hadoop&logoColor=white", alt: "Hadoop" },
-        { src: "https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white", alt: "Docker" },
-        { src: "https://img.shields.io/badge/Apache_Spark-E25A1C?logo=apache-spark&logoColor=white", alt: "Apache Spark" },
-    ],
-    "Full Stack Development": [
-        { src: "https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white", alt: "Node.js" },
-        { src: "https://img.shields.io/badge/Django-092E20?logo=django&logoColor=white", alt: "Django" },
-        { src: "https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black", alt: "React" },
-        { src: "https://img.shields.io/badge/Flask-000000?logo=flask&logoColor=white", alt: "Flask" },
-        { src: "https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white", alt: "HTML5" },
-        { src: "https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black", alt: "JavaScript" },
-        { src: "https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white", alt: "CSS3" },
-        { src: "https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white", alt: "Tailwind" },
-    { src: "https://img.shields.io/badge/Bootstrap-563D7C?logo=bootstrap&logoColor=white", alt: "Bootstrap" },
-    ],
-    "Mobile App Development": [
-        { src: "https://img.shields.io/badge/Flutter-02569B?logo=flutter&logoColor=white", alt: "Flutter" },
-        { src: "https://img.shields.io/badge/Dart-0175C2?logo=dart&logoColor=white", alt: "Dart" },
-    ],
-    "Tools": [
-        { src: "https://img.shields.io/badge/Jupyter-F37626?logo=jupyter&logoColor=white", alt: "Jupyter" },
-        { src: "https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white", alt: "GitHub" },
-        { src: "https://img.shields.io/badge/VS_Code-007ACC?logo=visual-studio-code&logoColor=white", alt: "VS Code" },
-        { src: "https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white", alt: "Git" },
-    ],
+  "Machine Learning & AI": [
+    { src: "https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white", alt: "Python" },
+    { src: "https://img.shields.io/badge/TensorFlow-FF6F00?logo=tensorflow&logoColor=white", alt: "TensorFlow" },
+    { src: "https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white", alt: "PyTorch" },
+    { src: "https://img.shields.io/badge/Scikit--learn-F7931E?logo=scikit-learn&logoColor=white", alt: "Scikit-learn" },
+    { src: "https://img.shields.io/badge/Pandas-150458?logo=pandas&logoColor=white", alt: "Pandas" },
+    { src: "https://img.shields.io/badge/NumPy-013243?logo=numpy&logoColor=white", alt: "NumPy" },
+    { src: "https://img.shields.io/badge/Matplotlib-11557c?logo=matplotlib&logoColor=white", alt: "Matplotlib" },
+    { src: "https://img.shields.io/badge/Seaborn-30B7F5?logo=seaborn&logoColor=white", alt: "Seaborn" },
+  ],
+
+  "NLP & Information Retrieval": [
+    { src: "https://img.shields.io/badge/Transformers-FF9A00?logo=huggingface&logoColor=white", alt: "Transformers" },
+    { src: "https://img.shields.io/badge/FastText-0054A6?logo=facebook&logoColor=white", alt: "FastText" },
+    { src: "https://img.shields.io/badge/OpenAI_API-412991?logo=openai&logoColor=white", alt: "OpenAI API" },
+    { src: "https://img.shields.io/badge/pgvector-4169E1?logo=postgresql&logoColor=white", alt: "pgvector" },
+  ],
+
+  "Data Engineering & Cloud": [
+    { src: "https://img.shields.io/badge/AWS-232F3E?logo=amazon-aws&logoColor=white", alt: "AWS" },
+    { src: "https://img.shields.io/badge/EC2-FF9900?logo=amazon-aws&logoColor=white", alt: "EC2" },
+    { src: "https://img.shields.io/badge/S3-569A31?logo=amazon-s3&logoColor=white", alt: "S3" },
+    { src: "https://img.shields.io/badge/Lambda-FF9900?logo=aws-lambda&logoColor=white", alt: "Lambda" },
+    { src: "https://img.shields.io/badge/API_Gateway-FF4F00?logo=amazon-api-gateway&logoColor=white", alt: "API Gateway" },
+    { src: "https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white", alt: "Docker" },
+    { src: "https://img.shields.io/badge/Supabase-3ECF8E?logo=supabase&logoColor=white", alt: "Supabase" },
+  ],
+
+  "Databases": [
+    { src: "https://img.shields.io/badge/PostgreSQL-316192?logo=postgresql&logoColor=white", alt: "PostgreSQL" },
+    { src: "https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white", alt: "MySQL" },
+    { src: "https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white", alt: "MongoDB" },
+  ],
+
+  "Backend & APIs": [
+    { src: "https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white", alt: "FastAPI" },
+    { src: "https://img.shields.io/badge/Flask-000000?logo=flask&logoColor=white", alt: "Flask" },
+    { src: "https://img.shields.io/badge/Django-092E20?logo=django&logoColor=white", alt: "Django" },
+    { src: "https://img.shields.io/badge/REST_APIs-005571?logo=api&logoColor=white", alt: "REST APIs" },
+  ],
+
+  "Tools & Platforms": [
+    { src: "https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white", alt: "Git" },
+    { src: "https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white", alt: "GitHub" },
+    { src: "https://img.shields.io/badge/Jupyter-F37626?logo=jupyter&logoColor=white", alt: "Jupyter" },
+    { src: "https://img.shields.io/badge/VS_Code-007ACC?logo=visual-studio-code&logoColor=white", alt: "VS Code" },
+  ],
 };
 
+
 const iconMap = {
-    "Data Science": "mdi-brain",
-    "Databases & Storage": "mdi-database",
-    "Cloud & Big Data": "mdi-cloud-outline",
-    "Full Stack Development": "mdi-web",
-    "Mobile App Development": "mdi-cellphone",
-    "Tools": "mdi-tools",
-}
+  "Machine Learning & AI": "mdi-brain",
+  "NLP & Information Retrieval": "mdi-text-recognition",
+  "Data Engineering & Cloud": "mdi-cloud-outline",
+  "Databases": "mdi-database",
+  "Backend & APIs": "mdi-api",
+  "Tools & Platforms": "mdi-tools",
+};
 
 const Skills = () => {
     return (
