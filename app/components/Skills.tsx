@@ -66,7 +66,7 @@ const Skills = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-3xl font-bold mb-4">My Technical <span className="gradient-text">Arsenal</span></h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto">A collection of tools and technologies I use to bring ideas to life.</p>
+                    <p className="text-gray-400 max-w-2xl mx-auto">Technologies I use to design, deploy, and scale machine learning systems.</p>
                     <div className="w-24 h-1 bg-linear-to-r from-primary to-secondary mx-auto mt-4"></div>
                 </div>
                 <div className="glass-card px-6 py-4 md:p-12 rounded-3xl">
@@ -79,7 +79,7 @@ const Skills = () => {
                                     </div>
                                     <h3 className="text-lg font-semibold">{category}</h3>
                                 </div>
-                                <div className="flex flex-wrap gap-2">
+                                <div className="flex gap-2 overflow-x-auto whitespace-nowrap no-scrollbar">
                                     {skills.map(skill => (
                                         <Image key={skill.alt} src={skill.src} alt={skill.alt} width={100} height={20} className="h-5 w-auto" unoptimized />
                                     ))}

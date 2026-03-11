@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { internship_summaries } from "@/app/data/internship_summaries";
 
 type InternshipMedia =
     | { type: "icon"; name: string }
@@ -12,50 +16,90 @@ type Internship = {
     description: string;
     tags: string[];
     media: InternshipMedia;
-    codeUrl: string;
+    summarySlug: keyof typeof internship_summaries;
+    codeUrl?: string;
     siteUrl?: string;
 };
 
 const internships: Internship[] = [
-    {
-        title: "Data Scientist Intern",
-        timeline: "Jul-Nov 2025",
-        organization: "Path",
-        focus: "Capstone Project",
-        description: "Built a RAG-enhanced career guidance system using OpenAI GPT, Supabase pgvector, and FastAPI. Delivered personalized role recommendations, timeline-driven roadmaps, and calendar-integrated scheduling.",
-        tags: ["RAG", "FastAPI", "OpenAI", "Supabase", "pgvector", "Adzuna", "Next.js"],
-        media: {
-            type: "image",
-            src: "/Path.png",
-            alt: "Path internship deliverables collage",
-        },
-        codeUrl: "#",
-        siteUrl: "https://trypath.co/",
+  {
+    title: "Data Scientist Intern",
+    timeline: "Jul-Nov 2025",
+    organization: "TryPath",
+    focus: "AI Development", // ← replaced “Capstone Project”
+    description:
+      "Designed and deployed a RAG-based AI career guidance system using OpenAI GPT, Supabase pgvector, and FastAPI. Built retrieval pipelines, ranking logic, and calendar‑aware scheduling workflows to deliver personalised role recommendations and timeline‑driven roadmaps.",
+    tags: [
+      "RAG",
+      "FastAPI",
+      "OpenAI",
+      "Supabase",
+      "pgvector",
+      "Adzuna API",
+      "Next.js",
+    ],
+    media: {
+      type: "image",
+      src: "/Path.png",
+      alt: "TryPath internship deliverables",
     },
-    {
-        title: "Backend Developer Intern",
-        timeline: "Jun-Nov 2022",
-        organization: "Pratishtha",
-        focus: "Festival Tech",
-        description: "Developed a responsive website and mobile app for a college fest using Flutter and Firebase. Delivered real-time updates and cross-device compatibility to boost event engagement.",
-        tags: ["Flutter", "Firebase", "HTML", "CSS", "JavaScript", "PHP", "Bootstrap"],
-        media: { type: "icon", name: "mdi-web" },
-        codeUrl: "#",
-    },
-    {
-        title: "Flutter Developer Intern",
-        timeline: "Nov 2021 - Apr 2022",
-        organization: "HireBus",
-        focus: "Product Launch",
-        description: "Led UI/UX development and API integration for a mobile app using Flutter and Firebase. Ensured seamless user experience and scalable backend management.",
-        tags: ["Flutter", "Firebase", "UI/UX", "GitHub"],
-        media: { type: "icon", name: "mdi-cellphone" },
-        codeUrl: "#",
-    },
+        summarySlug: "trypath",
+    siteUrl: "https://trypath.co/",
+  },
+
+  {
+    title: "Backend Developer Intern",
+    timeline: "Jun-Nov 2022",
+    organization: "Pratishtha",
+    focus: "Festival Tech",
+    description:
+      "Developed a responsive website and mobile app for a college fest using Flutter and Firebase. Implemented backend logic, real‑time updates, and cross‑device compatibility to enhance event engagement and user experience.",
+    tags: [
+      "Flutter",
+      "Firebase",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "PHP",
+      "Bootstrap",
+    ],
+    media: { type: "icon", name: "mdi-web" },
+        summarySlug: "pratishtha",
+  },
+
+  {
+    title: "Flutter Developer Intern",
+    timeline: "Nov 2021 - Apr 2022",
+    organization: "HireBus",
+    focus: "Product Launch",
+    description:
+      "Led UI/UX development and API integration for a mobile application built with Flutter and Firebase. Delivered smooth navigation, clean UI components, and scalable backend connectivity to support early‑stage product rollout.",
+    tags: ["Flutter", "Firebase", "UI/UX", "GitHub"],
+    media: { type: "icon", name: "mdi-cellphone" },
+        summarySlug: "hirebus",
+  },
 ];
 
 
+
 const Internships = () => {
+        const [selectedSummary, setSelectedSummary] = useState<keyof typeof internship_summaries | null>(null);
+
+        const currentSummary = selectedSummary ? internship_summaries[selectedSummary] : null;
+
+    useEffect(() => {
+        if (!selectedSummary) return;
+
+        const onKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "Escape") {
+                setSelectedSummary(null);
+            }
+        };
+
+        window.addEventListener("keydown", onKeyDown);
+        return () => window.removeEventListener("keydown", onKeyDown);
+    }, [selectedSummary]);
+
     return (
         <section id="internships" className="py-14">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -117,9 +161,13 @@ const Internships = () => {
                                     </div>
                                 </div>
                                 <div className="flex justify-between items-center border-t border-white/10 pt-4 mt-6 gap-4">
-                                    <a href={internship.codeUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-light text-sm flex items-center">
+                                    <button
+                                        type="button"
+                                        onClick={() => setSelectedSummary(internship.summarySlug)}
+                                        className="text-primary hover:text-primary-light text-sm flex items-center"
+                                    >
                                         <i className="mdi mdi-file-document-outline mr-1"></i> View Summary
-                                    </a>
+                                    </button>
                                     {internship.siteUrl && (
                                         <a href={internship.siteUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-light text-sm flex items-center">
                                             <i className="mdi mdi-open-in-new mr-1"></i> Live Website
@@ -131,6 +179,57 @@ const Internships = () => {
                     ))}
                 </div>
             </div>
+
+            {currentSummary && (
+                <div
+                    className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-3 sm:px-4 bg-black/70"
+                    role="dialog"
+                    aria-modal="true"
+                    onClick={() => setSelectedSummary(null)}
+                >
+                    <div
+                        className="bg-dark rounded-t-2xl sm:rounded-2xl w-full max-w-3xl h-[88vh] sm:h-auto sm:max-h-[85vh] overflow-y-auto border border-white/10 p-4 sm:p-8 relative"
+                        onClick={(event) => event.stopPropagation()}
+                    >
+                        <button
+                            type="button"
+                            onClick={() => setSelectedSummary(null)}
+                            className="absolute top-3 right-3 sm:top-4 sm:right-4 text-gray-300 hover:text-white"
+                            aria-label="Close summary"
+                        >
+                            <i className="mdi mdi-close text-xl sm:text-2xl"></i>
+                        </button>
+
+                        <h3 className="text-xl sm:text-2xl font-bold mb-5 sm:mb-6 pr-10">{currentSummary.title}</h3>
+
+                        <div className="space-y-5 sm:space-y-6 text-gray-300 text-sm sm:text-base">
+                            <div>
+                                <h4 className="text-base sm:text-lg font-semibold mb-2 text-white">About the Project</h4>
+                                <p>{currentSummary.about}</p>
+                            </div>
+
+                            <div>
+                                <h4 className="text-base sm:text-lg font-semibold mb-2 text-white">Problem</h4>
+                                <p>{currentSummary.problem}</p>
+                            </div>
+
+                            <div>
+                                <h4 className="text-base sm:text-lg font-semibold mb-2 text-white">My Contribution</h4>
+                                <ul className="list-disc ml-5 sm:ml-6 space-y-2">
+                                    {currentSummary.contribution.map((item) => (
+                                        <li key={item}>{item}</li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 className="text-base sm:text-lg font-semibold mb-2 text-white">Tech Stack</h4>
+                                <p>{currentSummary.tech}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </section>
     );
 };
