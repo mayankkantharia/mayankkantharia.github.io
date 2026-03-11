@@ -79,7 +79,7 @@ const Skills = () => {
                                     </div>
                                     <h3 className="text-lg font-semibold">{category}</h3>
                                 </div>
-                                <div className="flex gap-2 overflow-x-auto whitespace-nowrap no-scrollbar">
+                                <div className="flex flex-wrap sm:flex-nowrap gap-2 sm:overflow-x-auto whitespace-normal sm:whitespace-nowrap no-scrollbar">
                                     {skills.map(skill => (
                                         <Image key={skill.alt} src={skill.src} alt={skill.alt} width={100} height={20} className="h-5 w-auto" unoptimized />
                                     ))}
