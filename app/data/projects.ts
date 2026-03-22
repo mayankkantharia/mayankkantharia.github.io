@@ -62,6 +62,8 @@ export const projects: Project[] = [
     ],
     tags: ["TensorFlow", "FastText", "TF-IDF", "Logistic Regression", "Flask", "Python"],
     mediaIcon: "mdi-text-box-search-outline",
+    codeUrl: "https://github.com/mayankkantharia/NLP-Clothing-Review-Classification",
+    presentationUrl: "https://drive.google.com/file/d/1QWUPwDeab19cmGltI_YqWvUXHHhiTEey/view?usp=sharing"
   },
   {
     title: "Few-Shot Hyperspectral Image Classification",
