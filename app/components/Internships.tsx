@@ -22,70 +22,80 @@ type Internship = {
 };
 
 const internships: Internship[] = [
-  {
-    title: "Data Scientist Intern",
-    timeline: "Jul-Nov 2025",
-    organization: "TryPath",
-    focus: "AI Development", // ← replaced “Capstone Project”
-    description:
-      "Designed and deployed a RAG-based AI career guidance system using OpenAI GPT, Supabase pgvector, and FastAPI. Built retrieval pipelines, ranking logic, and calendar‑aware scheduling workflows to deliver personalised role recommendations and timeline‑driven roadmaps.",
-    tags: [
-      "RAG",
-      "FastAPI",
-      "OpenAI",
-      "Supabase",
-      "pgvector",
-      "Adzuna API",
-      "Next.js",
-    ],
-    media: {
-      type: "image",
-      src: "/Path.png",
-      alt: "TryPath internship deliverables",
-    },
+    {
+        title: "Data Scientist Intern",
+        timeline: "Jul-Nov 2025",
+        organization: "TryPath",
+        focus: "AI Development", // ← replaced “Capstone Project”
+        description:
+            "Designed and deployed a RAG-based AI career guidance system using OpenAI GPT, Supabase pgvector, and FastAPI. Built retrieval pipelines, ranking logic, and calendar‑aware scheduling workflows to deliver personalised role recommendations and timeline‑driven roadmaps.",
+        tags: [
+            "RAG",
+            "FastAPI",
+            "OpenAI",
+            "Supabase",
+            "pgvector",
+            "Adzuna API",
+            "Next.js",
+        ],
+        media: {
+            type: "image",
+            src: "/Path.png",
+            alt: "TryPath internship deliverables",
+        },
         summarySlug: "trypath",
-    siteUrl: "https://trypath.co/",
-  },
+        siteUrl: "https://trypath.co/",
+    },
 
-  {
-    title: "Backend Developer Intern",
-    timeline: "Jun-Nov 2022",
-    organization: "Pratishtha",
-    focus: "Festival Tech",
-    description:
-      "Developed a responsive website and mobile app for a college fest using Flutter and Firebase. Implemented backend logic, real‑time updates, and cross‑device compatibility to enhance event engagement and user experience.",
-    tags: [
-      "Flutter",
-      "Firebase",
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "PHP",
-      "Bootstrap",
-    ],
-    media: { type: "icon", name: "mdi-web" },
+    {
+        title: "Backend Developer Intern",
+        timeline: "Jun-Nov 2022",
+        organization: "Pratishtha",
+        focus: "Festival Tech",
+        description:
+            "Developed a responsive website and mobile app for a college fest using Flutter and Firebase. Implemented backend logic, real‑time updates, and cross‑device compatibility to enhance event engagement and user experience.",
+        tags: [
+            "Flutter",
+            "Firebase",
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "PHP",
+            "Bootstrap",
+        ],
+        media: {
+            type: "image",
+            src: "/Pratishtha.png",
+            alt: "Pratishtha internship deliverables"
+        },
         summarySlug: "pratishtha",
-  },
+        siteUrl: "https://pratishtha.sakec.ac.in",
+    },
 
-  {
-    title: "Flutter Developer Intern",
-    timeline: "Nov 2021 - Apr 2022",
-    organization: "HireBus",
-    focus: "Product Launch",
-    description:
-      "Led UI/UX development and API integration for a mobile application built with Flutter and Firebase. Delivered smooth navigation, clean UI components, and scalable backend connectivity to support early‑stage product rollout.",
-    tags: ["Flutter", "Firebase", "UI/UX", "GitHub"],
-    media: { type: "icon", name: "mdi-cellphone" },
+    {
+        title: "Flutter Developer Intern",
+        timeline: "Nov 2021 - Apr 2022",
+        organization: "HireBus",
+        focus: "Product Launch",
+        description:
+            "Led UI/UX development and API integration for a mobile application built with Flutter and Firebase. Delivered smooth navigation, clean UI components, and scalable backend connectivity to support early‑stage product rollout.",
+        tags: ["Flutter", "Firebase", "UI/UX", "GitHub"],
+        media: {
+            type: "image",
+            src: "/HireBus.png",
+            alt: "HireBus internship deliverables"
+        },
         summarySlug: "hirebus",
-  },
+        siteUrl: "https://www.hirebus.in",
+    },
 ];
 
 
 
 const Internships = () => {
-        const [selectedSummary, setSelectedSummary] = useState<keyof typeof internship_summaries | null>(null);
+    const [selectedSummary, setSelectedSummary] = useState<keyof typeof internship_summaries | null>(null);
 
-        const currentSummary = selectedSummary ? internship_summaries[selectedSummary] : null;
+    const currentSummary = selectedSummary ? internship_summaries[selectedSummary] : null;
 
     useEffect(() => {
         if (!selectedSummary) return;
@@ -112,19 +122,19 @@ const Internships = () => {
                     {internships.map((internship) => (
                         <div key={internship.title} className="glass-card rounded-2xl overflow-hidden hover:transform hover:-translate-y-2 transition duration-300 hover:shadow-2xl hover:shadow-primary/20 flex flex-col h-full">
                             <div
-                                className={`relative h-60 flex items-center justify-center overflow-hidden ${
-                                    internship.media.type === "icon"
-                                        ? "bg-linear-to-r from-primary/20 to-secondary/20"
-                                        : "bg-dark"
-                                }`}
+                                className={`relative h-60 flex items-center justify-center overflow-hidden ${internship.media.type === "icon"
+                                    ? "bg-linear-to-r from-primary/20 to-secondary/20"
+                                    : "bg-dark"
+                                    }`}
                             >
                                 {internship.media.type === "image" ? (
                                     <Image
                                         src={internship.media.src}
                                         alt={internship.media.alt}
                                         fill
-                                        className="object-cover"
+                                        className="object-contain"
                                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+
                                     />
                                 ) : (
                                     <i className={`mdi ${internship.media.name} text-7xl text-primary`}></i>
