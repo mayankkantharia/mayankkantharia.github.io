@@ -64,33 +64,61 @@ const Skills = () => {
     return (
         <section id="skills" className="py-14">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                {/* Section Header */}
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-3xl font-bold mb-4">My Technical <span className="gradient-text">Arsenal</span></h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto">Technologies I use to design, deploy, and scale machine learning systems.</p>
+                    <h2 className="text-3xl md:text-3xl font-bold mb-4">
+                        My Technical <span className="gradient-text">Arsenal</span>
+                    </h2>
+                    <p className="text-gray-400 max-w-2xl mx-auto">
+                        Technologies I use to design, deploy, and scale machine learning systems.
+                    </p>
                     <div className="w-24 h-1 bg-linear-to-r from-primary to-secondary mx-auto mt-4"></div>
                 </div>
+
+                {/* Skills Container */}
                 <div className="glass-card px-6 py-4 md:p-12 rounded-3xl">
                     <div className="grid grid-cols-1 text-sm">
+
                         {Object.entries(skillsData).map(([category, skills], index) => (
-                            <div key={category} className={`flex flex-col sm:flex-row items-start sm:items-center gap-4 p-4 ${index < Object.keys(skillsData).length -1 ? 'border-b border-gray-700' : ''}`}>
+                            <div 
+                                key={category}
+                                className={`flex flex-col sm:flex-row items-start sm:items-center gap-4 p-4 ${
+                                    index < Object.keys(skillsData).length - 1 ? 'border-b border-gray-700' : ''
+                                }`}
+                            >
+                                {/* Category Title + Icon */}
                                 <div className="flex items-center">
                                     <div className="bg-primary/10 p-2 rounded-lg mr-3">
-                                        <i className={`mdi ${iconMap[category as keyof typeof iconMap]} text-3xl text-primary`}></i>
+                                        <i className={`mdi ${iconMap[category as keyof typeof iconMap]}  text-3xl text-primary`}></i>
                                     </div>
                                     <h3 className="text-lg font-semibold">{category}</h3>
                                 </div>
-                                <div className="flex flex-wrap sm:flex-nowrap gap-2 sm:overflow-x-auto whitespace-normal sm:whitespace-nowrap no-scrollbar">
+
+                                {/* Skills Badges — FIXED WRAPPING */}
+                                <div className="flex flex-wrap gap-2 whitespace-normal overflow-visible">
                                     {skills.map(skill => (
-                                        <Image key={skill.alt} src={skill.src} alt={skill.alt} width={100} height={20} className="h-5 w-auto" unoptimized />
+                                        <Image
+                                            key={skill.alt}
+                                            src={skill.src}
+                                            alt={skill.alt}
+                                            width={0}
+                                            height={0}
+                                            className="h-5 w-auto max-w-full"
+                                            unoptimized
+                                        />
                                     ))}
                                 </div>
+
                             </div>
                         ))}
+
                     </div>
                 </div>
             </div>
         </section>
     );
-}
+};
+
 
 export default Skills;
