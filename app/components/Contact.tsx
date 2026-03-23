@@ -4,7 +4,7 @@ const Contact = () => {
     return (
         <section id="contact" className="py-14">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
+
                 {/* Header */}
                 <div className="text-center mb-14">
                     <h2 className="text-3xl font-bold mb-4">
@@ -15,23 +15,21 @@ const Contact = () => {
 
                 {/* Card */}
                 <div className="glass-card p-8 md:p-12 rounded-3xl">
-                    <div className="grid grid-cols-1 gap-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
 
                         {/* Left Section */}
                         <div className="flex flex-col space-y-10">
 
                             {/* Intro */}
-                            <div>
-                                <h3 className="text-2xl font-semibold mb-3 text-white">Let&apos;s Connect</h3>
-                                <p className="text-gray-400 leading-relaxed text-justify">
-                                    Finishing my Master&apos;s in Data Science 🎓 and ready to turn data into impact.
-                                    Actively seeking opportunities in data science, machine learning, and AI -
-                                    let&apos;s collaborate and build something meaningful.
+                            <div className="space-y-3">
+                                <h3 className="text-2xl font-semibold text-white">Let&apos;s Connect</h3>
+                                <p className="text-gray-400 leading-relaxed">
+                                    Data Science graduate with a focus on ML, NLP, and data engineering. Let’s connect and build something meaningful.
                                 </p>
                             </div>
 
                             {/* Email */}
-                            <div className="flex items-center space-x-4">
+                            <div className="flex items-start space-x-4">
                                 <a
                                     href="mailto:mayankkantharia01@gmail.com"
                                     target="_blank"
@@ -41,7 +39,7 @@ const Contact = () => {
                                     <i className="mdi mdi-email-outline text-2xl"></i>
                                 </a>
 
-                                <div className="flex flex-col justify-center min-w-0">
+                                <div className="flex flex-col justify-center">
                                     <h4 className="font-medium text-white">Email</h4>
                                     <a
                                         href="mailto:mayankkantharia01@gmail.com"
@@ -53,6 +51,11 @@ const Contact = () => {
                                     </a>
                                 </div>
                             </div>
+
+                        </div>
+
+                        {/* Right Section */}
+                        <div className="flex flex-col space-y-8">
 
                             {/* Socials */}
                             <div>
@@ -88,6 +91,7 @@ const Contact = () => {
                             </div>
 
                         </div>
+
                     </div>
                 </div>
 
