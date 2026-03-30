@@ -13,6 +13,23 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Interactive Economic Insights Dashboard",
+    category: "Data Visualization & Analytics",
+    organization: "RMIT",
+    description:
+      "Built and deployed an interactive dashboard to analyze global inflation and food-budget stress trends from 2017 to 2023 using reactive exploration workflows.",
+    highlights: [
+      "Built and deployed an interactive R Shiny dashboard analyzing global inflation and food-budget stress trends (2017-2023)",
+      "Designed geospatial maps and time-series visualizations with drill-down country profiles for comparative analysis",
+      "Cleaned, standardized, and merged multi-source datasets from Our World in Data to ensure consistent indicators",
+      "Published the dashboard on shinyapps.io with reactive filters and dynamic views for real-time exploration",
+    ],
+    tags: ["R", "Shiny", "ggplot2", "dplyr"],
+    mediaIcon: "mdi-chart-line",
+    codeUrl: "https://github.com/mayankkantharia/Interactive-Economic-Insights-Dashboard",
+    presentationUrl: "https://s4083242.shinyapps.io/Assignment-3/",
+  },
+  {
     title: "Cloud-Based Music Subscription Web Application",
     category: "Cloud Engineering",
     organization: "RMIT",
