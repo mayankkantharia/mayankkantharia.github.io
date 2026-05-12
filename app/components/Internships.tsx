@@ -110,6 +110,17 @@ const Internships = () => {
         return () => window.removeEventListener("keydown", onKeyDown);
     }, [selectedSummary]);
 
+    useEffect(() => {
+        if (!selectedSummary) return;
+
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+
+        return () => {
+            document.body.style.overflow = previousOverflow;
+        };
+    }, [selectedSummary]);
+
     return (
         <section id="internships" className="py-14">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

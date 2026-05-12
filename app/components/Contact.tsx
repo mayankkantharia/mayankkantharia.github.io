@@ -39,7 +39,11 @@ const Contact = () => {
                             </div>
                         </div>
 
-                        <div className="mt-6 rounded-2xl border border-white/10 bg-dark-light/40 p-4 animate-rise" style={{ animationDelay: "180ms" }}>
+                        <a
+                            href="mailto:mayankkantharia01@gmail.com"
+                            className="mt-6 block rounded-2xl border border-white/10 bg-dark-light/40 p-4 animate-rise transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/20"
+                            style={{ animationDelay: "180ms" }}
+                        >
                             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                                 <div className="flex items-center gap-3">
                                     <div className="w-12 h-12 rounded-full bg-dark-light border border-gray-700 flex items-center justify-center">
@@ -48,21 +52,16 @@ const Contact = () => {
                                     <div>
                                         <p className="text-xs uppercase tracking-wide text-gray-400">Primary</p>
                                         <h4 className="font-medium text-white">Email</h4>
-                                        <a
-                                            href="mailto:mayankkantharia01@gmail.com"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-gray-400 hover:text-primary transition break-all"
-                                        >
+                                        <span className="text-gray-400 hover:text-primary transition break-all">
                                             mayankkantharia01@gmail.com
-                                        </a>
+                                        </span>
                                     </div>
                                 </div>
                                 <div className="text-xs text-gray-400">
                                     Fastest way to reach me
                                 </div>
                             </div>
-                        </div>
+                        </a>
 
                         <div className="mt-6 animate-rise" style={{ animationDelay: "240ms" }}>
                             <h3 className="text-lg font-semibold mb-3 text-white">Profiles</h3>
@@ -71,7 +70,7 @@ const Contact = () => {
                                     href="https://github.com/mayankkantharia"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-3 rounded-2xl border border-white/10 bg-dark-light/40 p-3 hover:border-primary/40 transition"
+                                    className="flex items-center gap-3 rounded-2xl border border-white/10 bg-dark-light/40 p-3 transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/20"
                                 >
                                     <span className="w-9 h-9 rounded-full bg-dark-light border border-gray-700 flex items-center justify-center">
                                         <i className="mdi mdi-github text-lg"></i>
@@ -86,7 +85,7 @@ const Contact = () => {
                                     href="https://www.linkedin.com/in/mayankkantharia/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-3 rounded-2xl border border-white/10 bg-dark-light/40 p-3 hover:border-primary/40 transition"
+                                    className="flex items-center gap-3 rounded-2xl border border-white/10 bg-dark-light/40 p-3 transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/20"
                                 >
                                     <span className="w-9 h-9 rounded-full bg-dark-light border border-gray-700 flex items-center justify-center">
                                         <i className="mdi mdi-linkedin text-lg"></i>
@@ -101,7 +100,7 @@ const Contact = () => {
                                     href="https://www.instagram.com/mayankkantharia"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-3 rounded-2xl border border-white/10 bg-dark-light/40 p-3 hover:border-primary/40 transition"
+                                    className="flex items-center gap-3 rounded-2xl border border-white/10 bg-dark-light/40 p-3 transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/20"
                                 >
                                     <span className="w-9 h-9 rounded-full bg-dark-light border border-gray-700 flex items-center justify-center">
                                         <i className="mdi mdi-instagram text-lg"></i>
