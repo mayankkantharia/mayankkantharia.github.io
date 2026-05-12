@@ -1,7 +1,28 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { projects } from "@/app/data/projects";
+import { project_summaries } from "@/app/data/project_summaries";
 
 const Projects = () => {
+  const [selectedSummary, setSelectedSummary] = useState<keyof typeof project_summaries | null>(null);
+
+  const currentSummary = selectedSummary ? project_summaries[selectedSummary] : null;
+
+  useEffect(() => {
+    if (!selectedSummary) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setSelectedSummary(null);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [selectedSummary]);
+
   return (
     <section id="projects" className="py-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,7 +37,7 @@ const Projects = () => {
           <div className="w-24 h-1 bg-linear-to-r from-primary to-secondary mx-auto mt-4"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <article
               key={project.title}
@@ -54,12 +75,6 @@ const Projects = () => {
                 <div className="flex-1 space-y-4">
                   <p className="text-gray-400 text-sm text-justify">{project.description}</p>
 
-                  <ul className="list-disc ml-5 text-sm text-gray-300 space-y-1">
-                    {project.highlights.map((point) => (
-                      <li key={point}>{point}</li>
-                    ))}
-                  </ul>
-
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span key={tag} className="text-xs bg-dark-light px-2 py-1 rounded-full">
@@ -70,7 +85,17 @@ const Projects = () => {
                 </div>
 
                 <div className="flex flex-wrap justify-between items-center border-t border-white/10 pt-4 mt-6 gap-3">
-                  {project.codeUrl ? (
+                  {project.summarySlug && project_summaries[project.summarySlug as keyof typeof project_summaries] && (
+                    <button
+                      type="button"
+                      onClick={() => setSelectedSummary(project.summarySlug as keyof typeof project_summaries)}
+                      className="text-primary hover:text-primary-light text-sm flex items-center"
+                    >
+                      <i className="mdi mdi-file-document-outline mr-1"></i> View Summary
+                    </button>
+                  )}
+
+                  {project.codeUrl && (
                     <a
                       href={project.codeUrl}
                       target="_blank"
@@ -79,13 +104,9 @@ const Projects = () => {
                     >
                       <i className="mdi mdi-github mr-1"></i> View Code
                     </a>
-                  ) : (
-                    <span className="text-gray-500 text-sm flex items-center">
-                      <i className="mdi mdi-github mr-1"></i> Private Repo
-                    </span>
                   )}
 
-                  {project.presentationUrl ? (
+                  {project.presentationUrl && (
                     <a
                       href={project.presentationUrl}
                       target="_blank"
@@ -94,10 +115,6 @@ const Projects = () => {
                     >
                       <i className="mdi mdi-presentation mr-1"></i> Presentation
                     </a>
-                  ) : (
-                    <span className="text-gray-500 text-sm flex items-center">
-                      <i className="mdi mdi-file-document-outline mr-1"></i> Resume Project
-                    </span>
                   )}
                 </div>
               </div>
@@ -105,6 +122,57 @@ const Projects = () => {
           ))}
         </div>
       </div>
+
+      {currentSummary && (
+        <div
+          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-3 sm:px-4 bg-black/70"
+          role="dialog"
+          aria-modal="true"
+          onClick={() => setSelectedSummary(null)}
+        >
+          <div
+            className="bg-dark rounded-t-2xl sm:rounded-2xl w-full max-w-3xl h-[88vh] sm:h-auto sm:max-h-[85vh] overflow-y-auto border border-white/10 p-4 sm:p-8 relative"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setSelectedSummary(null)}
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 text-gray-300 hover:text-white"
+              aria-label="Close summary"
+            >
+              <i className="mdi mdi-close text-xl sm:text-2xl"></i>
+            </button>
+
+            <h3 className="text-xl sm:text-2xl font-bold mb-5 sm:mb-6 pr-10">{currentSummary.title}</h3>
+
+            <div className="space-y-5 sm:space-y-6 text-gray-300 text-sm sm:text-base">
+              <div>
+                <h4 className="text-base sm:text-lg font-semibold mb-2 text-white">About the Project</h4>
+                <p>{currentSummary.about}</p>
+              </div>
+
+              <div>
+                <h4 className="text-base sm:text-lg font-semibold mb-2 text-white">Problem</h4>
+                <p>{currentSummary.problem}</p>
+              </div>
+
+              <div>
+                <h4 className="text-base sm:text-lg font-semibold mb-2 text-white">My Contribution</h4>
+                <ul className="list-disc ml-5 sm:ml-6 space-y-2">
+                  {currentSummary.contribution.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-base sm:text-lg font-semibold mb-2 text-white">Tech Stack</h4>
+                <p>{currentSummary.tech}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

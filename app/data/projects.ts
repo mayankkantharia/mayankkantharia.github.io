@@ -7,6 +7,7 @@ export type Project = {
   tags: string[];
   mediaIcon?: string;
   mediaImage?: { src: string; alt: string };
+  summarySlug?: string;
   codeUrl?: string;
   presentationUrl?: string;
 };
@@ -27,6 +28,7 @@ export const projects: Project[] = [
     ],
     tags: ["R", "Shiny", "ggplot2", "dplyr"],
     mediaIcon: "mdi-chart-line",
+    summarySlug: "economic_dashboard",
     codeUrl: "https://github.com/mayankkantharia/Interactive-Economic-Insights-Dashboard",
     presentationUrl: "https://s4083242.shinyapps.io/Assignment-3/",
   },
@@ -45,6 +47,7 @@ export const projects: Project[] = [
     ],
     tags: ["AWS EC2", "S3", "DynamoDB", "API Gateway", "Lambda", "Ubuntu", "Apache2"],
     mediaIcon: "mdi-cloud-outline",
+    summarySlug: "cloud_music_app",
   },
   {
     title: "Russia-Ukraine War: Social Media & Network Analysis",
@@ -61,6 +64,7 @@ export const projects: Project[] = [
     ],
     tags: ["Python", "PRAW", "YouTube API", "VADER", "LDA", "NetworkX", "Louvain"],
     mediaImage: { src: "/RussiaUkraineWar.jpg", alt: "Network graph visual for Russia-Ukraine information flows" },
+    summarySlug: "ru_ukraine_network",
     codeUrl: "https://github.com/mayankkantharia/Social-Media-A2",
     presentationUrl:
       "https://www.canva.com/design/DAGpRvWhgBA/LBbA9ui11CiYOPCiHlc6uA/view?utm_content=DAGpRvWhgBA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h1d638ba156",
@@ -80,6 +84,7 @@ export const projects: Project[] = [
     ],
     tags: ["TensorFlow", "FastText", "TF-IDF", "Logistic Regression", "Flask", "Python"],
     mediaIcon: "mdi-text-box-search-outline",
+    summarySlug: "nlp_clothing",
     codeUrl: "https://github.com/mayankkantharia/NLP-Clothing-Review-Classification",
     presentationUrl: "https://drive.google.com/file/d/1QWUPwDeab19cmGltI_YqWvUXHHhiTEey/view?usp=sharing"
   },
@@ -98,6 +103,7 @@ export const projects: Project[] = [
     ],
     tags: ["PyTorch", "TensorFlow", "Few-Shot Learning", "Attention", "HSI", "Deep Learning"],
     mediaIcon: "mdi-brain",
+    summarySlug: "few_shot_hsi",
     codeUrl: "https://github.com/mayankkantharia/HSI-Few-Shot-Prototypical-Network",
     presentationUrl:
       "https://www.canva.com/design/DAFKl8v9FWY/QWfiTHsmM5fivNiZ58Stzg/view?utm_content=DAFKl8v9FWY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h9048a6012d",
@@ -105,7 +111,7 @@ export const projects: Project[] = [
   {
     title: "Telco Customer Churn Prediction Analysis",
     category: "ML + Business Analytics",
-    organization: "Personal Project",
+    organization: "RMIT",
     description:
       "Built an end-to-end churn prediction pipeline on IBM Telco data with modeling insights tied to retention actions.",
     highlights: [
@@ -126,5 +132,7 @@ export const projects: Project[] = [
       "Jupyter",
     ],
     mediaIcon: "mdi-chart-areaspline",
+    summarySlug: "telco_churn",
+    codeUrl: "https://github.com/mayankkantharia/Telco-Customer-Churn-Prediction-Analysis",
   },
 ];

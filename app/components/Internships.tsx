@@ -28,7 +28,7 @@ const internships: Internship[] = [
         organization: "TryPath",
         focus: "AI Development", // ← replaced “Capstone Project”
         description:
-            "Designed and deployed a RAG-based AI career guidance system using OpenAI GPT, Supabase pgvector, and FastAPI. Built retrieval pipelines, ranking logic, and calendar‑aware scheduling workflows to deliver personalised role recommendations and timeline‑driven roadmaps.",
+            "Shipped a RAG-based career guidance system with FastAPI and pgvector, delivering personalized role recommendations and roadmap timelines.",
         tags: [
             "RAG",
             "FastAPI",
@@ -53,7 +53,7 @@ const internships: Internship[] = [
         organization: "Pratishtha",
         focus: "Festival Tech",
         description:
-            "Developed a responsive website and mobile app for a college fest using Flutter and Firebase. Implemented backend logic, real‑time updates, and cross‑device compatibility to enhance event engagement and user experience.",
+            "Built a fest web + mobile experience with Flutter and Firebase, enabling real-time updates and cross-device engagement.",
         tags: [
             "Flutter",
             "Firebase",
@@ -78,7 +78,7 @@ const internships: Internship[] = [
         organization: "HireBus",
         focus: "Product Launch",
         description:
-            "Led UI/UX development and API integration for a mobile application built with Flutter and Firebase. Delivered smooth navigation, clean UI components, and scalable backend connectivity to support early‑stage product rollout.",
+            "Owned Flutter UI/UX and API integration, delivering smooth navigation and scalable Firebase connectivity for launch.",
         tags: ["Flutter", "Firebase", "UI/UX", "GitHub"],
         media: {
             type: "image",
